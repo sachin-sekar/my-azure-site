@@ -3,37 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Azure Website</title>
+    <title>Hostel Care | Digital Complaint Box</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
         <div class="container">
-            <h1>My Portfolio</h1>
+            <h1>Hostel<span>Care</span></h1>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#new-complaint">Submit</a></li>
+                <li><a href="#track">Track Status</a></li>
             </ul>
         </div>
     </nav>
 
-    <header id="home">
-        <div class="hero-content">
-            <h2>Welcome to My Azure-Hosted Site</h2>
-            <p>Deployed successfully using Azure Static Web Apps.</p>
-            <button onclick="showMessage()">Click Me</button>
-            <p id="display-message"></p>
+    <header>
+        <div class="hero">
+            <h2>Fast Resolution for Better Living</h2>
+            <p>Report maintenance, food, or safety issues directly to the warden.</p>
         </div>
     </header>
 
-    <section id="about" class="container">
-        <h2>About This Project</h2>
-        <p>This is a simple full-stack ready template designed for quick deployment. It uses HTML5, CSS3, and a touch of JavaScript.</p>
+    <section id="new-complaint" class="container">
+        <div class="form-card">
+            <h3>New Complaint Form</h3>
+            <form id="complaintForm">
+                <div class="input-group">
+                    <label>Issue Category</label>
+                    <select id="category" required>
+                        <option value="Electricity">Electricity/Light</option>
+                        <option value="Plumbing">Plumbing/Water</option>
+                        <option value="Food">Mess/Food Quality</option>
+                        <option value="Cleaning">Cleaning/Sanitation</option>
+                        <option value="Other">Other Issues</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Room Number</label>
+                    <input type="text" id="room" placeholder="e.g. B-204" required>
+                </div>
+                <div class="input-group">
+                    <label>Problem Description</label>
+                    <textarea id="description" rows="4" placeholder="Describe your problem clearly..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Submit Complaint</button>
+            </form>
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 | Built with Azure & GitHub</p>
-    </footer>
+    <section id="track" class="container">
+        <h3>Recent Submissions</h3>
+        <div id="complaintList" class="complaint-list">
+            <div class="status-card">
+                <div class="status-info">
+                    <strong>#ID-8821</strong> | Plumbing
+                    <p>Tap leakage in bathroom.</p>
+                </div>
+                <span class="badge in-progress">In Progress</span>
+            </div>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
