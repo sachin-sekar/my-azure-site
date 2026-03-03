@@ -3,38 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hostel Care | Digital Complaint Box</title>
+    <title>Hostel Digital Gate Pass</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <h1>Hostel<span>Care</span></h1>
-            <ul>
-                <li><a href="#new-complaint">Submit</a></li>
-                <li><a href="#track">Track Status</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="container">
+        <h2>Digital Gate Pass</h2>
+        <form id="passForm">
+            <input type="text" id="studentName" placeholder="Full Name" required>
+            <input type="text" id="roomNo" placeholder="Room Number" required>
+            <textarea id="reason" placeholder="Reason for leaving" required></textarea>
+            <button type="submit">Generate Pass & Log Exit</button>
+        </form>
 
-    <header>
-        <div class="hero">
-            <h2>Fast Resolution for Better Living</h2>
-            <p>Report maintenance, food, or safety issues directly to the warden.</p>
+        <div id="qrcode-container">
+            <h3>Your Scan Code</h3>
+            <div id="qrcode"></div>
+            <p>Show this at the gate</p>
         </div>
-    </header>
-
-    <section id="new-complaint" class="container">
-        <div class="form-card">
-            <h3>New Complaint Form</h3>
-            <form id="complaintForm">
-                <div class="input-group">
-                    <label>Issue Category</label>
-                    <select id="category" required>
-                        <option value="Electricity">Electricity/Light</option>
-                        <option value="Plumbing">Plumbing/Water</option>
-                        <option value="Food">Mess/Food Quality</option>
-                        <option value="Cleaning">Cleaning/Sanitation</option>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>                        <option value="Cleaning">Cleaning/Sanitation</option>
                         <option value="Other">Other Issues</option>
                     </select>
                 </div>
